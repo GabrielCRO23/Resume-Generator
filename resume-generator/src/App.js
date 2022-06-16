@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css';
 import AppHeader from './components/Header'
 
@@ -16,15 +17,18 @@ import Work from './components/Work'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#35342f',
+      main: '#fff',
+      dark: '#35342f',
     },
     secondary: {
       main: '#37bbe4',
+      dark: '#fff',
     },
   },
 });
 
 function App() {
+  const [addFields, setAddFields] = useState([])
   return (
     <Container maxWidth="lg">
     <ThemeProvider theme={theme}>
@@ -39,18 +43,10 @@ function App() {
      <Box my={10}>
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
-     <Work></Work>
+     <Work setAddFields={setAddFields}></Work>
      
      
-     <Button variant="contained" color="secondary" sx={{
-       marginTop:'2rem'
-       }}>
-
-
-          
-
-  
-      Add additional experience</Button>
+     
 
 
      </Box>

@@ -4,9 +4,14 @@ import Container from '@mui/material/Container';
 //import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 
-const Work = function(){
+const Work = function({setAddFields}){
+    function addFieldsHandler(e){
+        console.log(<Work></Work>)
+        setAddFields(<Work></Work>)
+    }
     return (
         
           
@@ -71,7 +76,17 @@ const Work = function(){
           
       />
  </Grid>
+ <Grid item xs={12} sm={12}>
+ <Button onClick={addFieldsHandler}variant="contained" color="secondary" sx={{
+       marginTop:'2rem'
+       }}>
 
+
+          
+
+  
+      Add additional experience</Button>
+</Grid>
 </Grid>
         
         

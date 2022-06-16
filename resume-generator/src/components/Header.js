@@ -6,9 +6,9 @@ import Container from '@mui/material/Container';
 const AppHeader = function() {
   return (
    
-    <AppBar color ="secondary">
+    <AppBar color='primary'>
       
-        <Typography variant='h4' color="primary">
+        <Typography variant='h4' color="primary.dark">
           Resume Generator
         </Typography>
         <Typography variant='subtitle1' color="primary.dark">
