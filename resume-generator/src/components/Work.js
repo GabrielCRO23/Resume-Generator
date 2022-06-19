@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 //import FormControl from '@mui/material/FormControl';
@@ -7,23 +7,33 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
 
-const Work = function({setAddFields}){
-    function addFieldsHandler(e){
-        console.log(<Work></Work>)
-        setAddFields(<Work></Work>)
-    }
+const Work = function(){
+    const [formFields, setFormFields] = useState([
+        { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
+    ]);
+
     return (
         
+        
+    
           
       <Grid container spacing={3}>
           
+
+            
+            {
+                formFields.map((formField, index) => (
+                    
+             
+        <React.Fragment key={index}>
         <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'
           placeholder='Occupation'
-          id='occupation'
+          name='occupation'
           color="secondary"
           fullWidth
+          value={formField.occupation}
           
               />
          </Grid>
@@ -32,9 +42,10 @@ const Work = function({setAddFields}){
          <TextField
           variant='filled'
           placeholder='Employer'
-          id='employer'
+          name='employer'
           color="secondary"
           fullWidth
+          value={formField.employer}
           
            />
         </Grid>
@@ -44,9 +55,10 @@ const Work = function({setAddFields}){
           variant='filled'
           placeholder="mm/dd/yyyy"
           label='Start Date'
-          id='start-date'
+          name='startdate'
           color="secondary"
           fullWidth
+          value={formField.startdate}
           
         />
     </Grid>
@@ -56,29 +68,31 @@ const Work = function({setAddFields}){
           variant='filled'
           label='End Date' 
           placeholder="mm/dd/yyyy"
-          id='end-date'
+          name='enddate'
           color="secondary"
           fullWidth
+          value={formField.enddate}
           
       />
  </Grid>
 
- <Grid item xs={12} sm={12}>
+        <Grid item xs={12} sm={12}>
          <TextField
           variant='filled'
           placeholder="Write about your job duties"
-          id='duties'
+          name='duties'
           color="secondary"
           fullWidth
           multiline
           rows='6'
+          value={formField.duties}
           
           
       />
  </Grid>
  <Grid item xs={12} sm={12}>
- <Button onClick={addFieldsHandler}variant="contained" color="secondary" sx={{
-       marginTop:'2rem'
+ <Button variant="contained" color="secondary" sx={{
+       margin:'2rem'
        }}>
 
 
@@ -86,13 +100,22 @@ const Work = function({setAddFields}){
 
   
       Add additional experience</Button>
+
+      
+       
 </Grid>
+</React.Fragment>
+))
+}
+
+
 </Grid>
-        
-        
-        
-        
+         
+             
+              
     )
 }
+
+
 
 export default Work

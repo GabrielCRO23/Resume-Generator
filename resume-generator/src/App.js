@@ -28,7 +28,8 @@ const theme = createTheme({
 });
 
 function App() {
-  const [addFields, setAddFields] = useState([])
+  
+
   return (
     <Container maxWidth="lg">
     <ThemeProvider theme={theme}>
@@ -43,8 +44,9 @@ function App() {
      <Box my={10}>
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
-     <Work setAddFields={setAddFields}></Work>
+     <Work></Work>
      
+
      
      
 

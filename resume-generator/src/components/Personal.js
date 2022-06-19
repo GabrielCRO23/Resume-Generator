@@ -58,7 +58,6 @@ const Personal = function(){
  </Grid>
 </Grid>
         
-    
         
         
         

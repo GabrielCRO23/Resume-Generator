@@ -9,7 +9,7 @@ const Education = function(){
           <Grid item xs={12} sm={6}>
            <TextField
             variant='filled'
-            placeholder='Name of Organization'
+            placeholder='Name of School'
             id='occupation'
             color="secondary"
             fullWidth
