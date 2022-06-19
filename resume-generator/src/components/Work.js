@@ -106,7 +106,7 @@ const Work = function(){
  </React.Fragment>
 ))
 }
- <Grid item xs={12} sm={12}>
+ 
  <Button onClick={() => handleAdd()}variant="contained" color="secondary" sx={{
        margin:'2rem'
        }}>
@@ -115,11 +115,11 @@ const Work = function(){
           
 
   
-      Add additional experience</Button>
+      Add additional exp</Button>
 
       
        
-</Grid>
+
 
 
 

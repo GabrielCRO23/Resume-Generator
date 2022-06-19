@@ -55,12 +55,7 @@ function App() {
      <hr color="#35342f"></hr>
      <EducationHeader></EducationHeader>
      <Education></Education>
-     <Button variant="contained" color="secondary" sx={{
-       marginTop:'2rem'
-     }}>
-       
-       
-       Add additional education</Button>
+     
 
 
     </div>
