@@ -12,6 +12,16 @@ const Work = function(){
         { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
     ]);
 
+    function handleChangeInput(index, event){
+        const values = [...formFields];
+        values[index][event.target.name] = event.target.value
+        setFormFields(values);
+    }
+
+    function handleAdd(){
+        setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }])
+    }
+
     return (
         
         
@@ -34,6 +44,7 @@ const Work = function(){
           color="secondary"
           fullWidth
           value={formField.occupation}
+          onChange={event => handleChangeInput(index, event)}
           
               />
          </Grid>
@@ -46,7 +57,7 @@ const Work = function(){
           color="secondary"
           fullWidth
           value={formField.employer}
-          
+          onChange={event => handleChangeInput(index, event)}
            />
         </Grid>
 
@@ -59,6 +70,7 @@ const Work = function(){
           color="secondary"
           fullWidth
           value={formField.startdate}
+          onChange={event => handleChangeInput(index, event)}
           
         />
     </Grid>
@@ -89,9 +101,13 @@ const Work = function(){
           
           
       />
+      <hr></hr>
  </Grid>
+ </React.Fragment>
+))
+}
  <Grid item xs={12} sm={12}>
- <Button variant="contained" color="secondary" sx={{
+ <Button onClick={() => handleAdd()}variant="contained" color="secondary" sx={{
        margin:'2rem'
        }}>
 
@@ -104,9 +120,7 @@ const Work = function(){
       
        
 </Grid>
-</React.Fragment>
-))
-}
+
 
 
 </Grid>
