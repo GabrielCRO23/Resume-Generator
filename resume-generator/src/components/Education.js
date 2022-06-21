@@ -18,6 +18,12 @@ const Education = function(){
     function handleAdd(){
         setFormFields([...formFields, { school: "", certification: "", startdate: "", enddate: "" }])
     }
+
+    function handleRemove(index){
+        const values = [...formFields]
+        values.splice(index, 1)
+        setFormFields(values)
+    }
     
 
 
@@ -80,21 +86,25 @@ const Education = function(){
             onChange={event => handleChangeInput(index, event)}
             
         />
+    
+   </Grid>
+   <Grid item xs={12} sm={12}>
+       <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
    </Grid>
    </React.Fragment>
 ))
 }
 
 
-
+<Grid item xs={12} sm={12}>
    <Button onClick={() => handleAdd()}variant="contained" color="secondary" sx={{
        margin:'2rem'
      }}>
        
        
-       Add additional education</Button>
+       Add education</Button>
 
-
+       </Grid>
    </Grid>
     )
 }

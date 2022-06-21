@@ -22,6 +22,14 @@ const Work = function(){
         setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }])
     }
 
+    function handleRemove(index){
+        const values = [...formFields]
+        values.splice(index, 1)
+        setFormFields(values)
+    }
+
+   
+
     return (
         
         
@@ -103,10 +111,13 @@ const Work = function(){
       />
       <hr></hr>
  </Grid>
+ <Grid item xs={12} sm={12}>
+       <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
+   </Grid>
  </React.Fragment>
 ))
 }
- 
+<Grid item xs={12} sm={12}>
  <Button onClick={() => handleAdd()}variant="contained" color="secondary" sx={{
        margin:'2rem'
        }}>
@@ -115,12 +126,12 @@ const Work = function(){
           
 
   
-      Add additional exp</Button>
+      Add experience</Button>
 
-      
+      </Grid>    
        
 
-
+    
 
 
 </Grid>

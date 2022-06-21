@@ -41,7 +41,7 @@ function App() {
      <PersonalHeader></PersonalHeader>
      <Personal></Personal>
      </Box>
-     <Box my={10}>
+     
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
      <Work></Work>
@@ -51,13 +51,13 @@ function App() {
      
 
 
-     </Box>
+     
      <hr color="#35342f"></hr>
      <EducationHeader></EducationHeader>
      <Education></Education>
      
-
-
+    <hr></hr>
+    <Button variant="contained" color="secondary">Preview Resume</Button>
     </div>
     </ThemeProvider>
     </Container>
