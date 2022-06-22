@@ -29,6 +29,17 @@ const theme = createTheme({
 
 function App() {
   
+  const [formFields, setFormFields] = useState([
+    { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
+]);
+
+  const [formTwoFields, setFormTwoFields] = useState([
+  { school: "", certification: "", startdate: "", enddate: "" },
+]);
+
+
+
+
 
   return (
     <Container maxWidth="lg">
@@ -44,7 +55,7 @@ function App() {
      
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
-     <Work></Work>
+     <Work formFields={formFields} setFormFields={setFormFields}></Work>
      
 
      
@@ -54,7 +65,7 @@ function App() {
      
      <hr color="#35342f"></hr>
      <EducationHeader></EducationHeader>
-     <Education></Education>
+     <Education formTwoFields={formTwoFields} setFormTwoFields={setFormTwoFields}></Education>
      
     <hr></hr>
     <Button variant="contained" color="secondary">Preview Resume</Button>

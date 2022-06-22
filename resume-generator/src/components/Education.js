@@ -1,28 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
-const Education = function(){
+const Education = function({formTwoFields, setFormTwoFields}){
 
-    const [formFields, setFormFields] = useState([
-        { school: "", certification: "", startdate: "", enddate: "" },
-    ]);
 
     function handleChangeInput(index, event){
-        const values = [...formFields];
+        const values = [...formTwoFields];
         values[index][event.target.name] = event.target.value
-        setFormFields(values);
+        setFormTwoFields(values);
     }
 
     function handleAdd(){
-        setFormFields([...formFields, { school: "", certification: "", startdate: "", enddate: "" }])
+        setFormTwoFields([...formTwoFields, { school: "", certification: "", startdate: "", enddate: "" }])
     }
 
     function handleRemove(index){
-        const values = [...formFields]
+        const values = [...formTwoFields]
         values.splice(index, 1)
-        setFormFields(values)
+        setFormTwoFields(values)
     }
     
 
@@ -31,7 +28,7 @@ const Education = function(){
 <Grid container spacing={3}>
           
                 {
-                formFields.map((formField, index) => (
+                formTwoFields.map((formTwoField, index) => (
 
         <React.Fragment key={index}>
           <Grid item xs={12} sm={6}>
@@ -41,7 +38,7 @@ const Education = function(){
             name="school"
             color="secondary"
             fullWidth
-            value={formField.school}
+            value={formTwoField.school}
             onChange={event => handleChangeInput(index, event)}
             
                 />
@@ -54,7 +51,7 @@ const Education = function(){
             name="certification"
             color="secondary"
             fullWidth
-            value={formField.certification}
+            value={formTwoField.certification}
             onChange={event => handleChangeInput(index, event)}
             
              />
@@ -68,7 +65,7 @@ const Education = function(){
             name="startdate"
             color="secondary"
             fullWidth
-            value={formField.startdate}
+            value={formTwoField.startdate}
             onChange={event => handleChangeInput(index, event)}
             
           />
@@ -82,7 +79,7 @@ const Education = function(){
             name="enddate"
             color="secondary"
             fullWidth
-            value={formField.enddate}
+            value={formTwoField.enddate}
             onChange={event => handleChangeInput(index, event)}
             
         />

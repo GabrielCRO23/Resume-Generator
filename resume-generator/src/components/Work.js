@@ -7,10 +7,8 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
 
-const Work = function(){
-    const [formFields, setFormFields] = useState([
-        { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
-    ]);
+const Work = function({formFields, setFormFields}){
+    
 
     function handleChangeInput(index, event){
         const values = [...formFields];
@@ -26,6 +24,13 @@ const Work = function(){
         const values = [...formFields]
         values.splice(index, 1)
         setFormFields(values)
+    }
+
+    
+
+    function handleLog(index){
+        
+        console.log(formFields[index].occupation)
     }
 
    
@@ -46,6 +51,7 @@ const Work = function(){
         <React.Fragment key={index}>
         <Grid item xs={12} sm={6}>
          <TextField
+          
           variant='filled'
           placeholder='Occupation'
           name='occupation'
@@ -92,7 +98,7 @@ const Work = function(){
           color="secondary"
           fullWidth
           value={formField.enddate}
-          
+          onChange={event => handleChangeInput(index, event)}
       />
  </Grid>
 
@@ -106,7 +112,7 @@ const Work = function(){
           multiline
           rows='6'
           value={formField.duties}
-          
+          onChange={event => handleChangeInput(index, event)}
           
       />
       <hr></hr>
@@ -127,7 +133,7 @@ const Work = function(){
 
   
       Add experience</Button>
-
+      <Button variant="contained" onClick={() => handleLog()}>Check console log</Button>
       </Grid>    
        
 
