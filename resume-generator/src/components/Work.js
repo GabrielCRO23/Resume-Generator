@@ -30,7 +30,11 @@ const Work = function({formFields, setFormFields}){
 
     function handleLog(index){
         
-        console.log(formFields[index].occupation)
+        formFields.forEach((formField) => {
+            console.log(formField.occupation)
+        })
+        
+        
     }
 
    
@@ -120,6 +124,7 @@ const Work = function({formFields, setFormFields}){
  <Grid item xs={12} sm={12}>
        <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
    </Grid>
+   <Button variant="contained" onClick={() => handleLog(index)}>Check console log</Button>
  </React.Fragment>
 ))
 }
@@ -133,7 +138,7 @@ const Work = function({formFields, setFormFields}){
 
   
       Add experience</Button>
-      <Button variant="contained" onClick={() => handleLog()}>Check console log</Button>
+      
       </Grid>    
        
 
