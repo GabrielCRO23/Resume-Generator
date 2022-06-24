@@ -45,6 +45,8 @@ const theme = createTheme({
 });
 
 function App() {
+
+  
   
   const [isToggled, setIsToggled] = useState(false);
 
@@ -64,7 +66,7 @@ function App() {
     <Container maxWidth="lg">
     <ThemeProvider theme={theme}>
     <div className="App">
-    { isToggled ? <Preview></Preview> : <AppInit isToggled={isToggled} setIsToggled={setIsToggled}></AppInit> }
+    { isToggled ? <Preview /*formFields={formFields} setFormFields={setFormFields}*/></Preview> : <AppInit isToggled={isToggled} setIsToggled={setIsToggled}></AppInit> }
      
     
     </div>

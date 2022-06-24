@@ -12,7 +12,20 @@ const Preview = function({formFields, setFormFields}){
 
        
        
-        <h1>Hello</h1>
+        <div>
+       
+
+        {
+            formFields.map((formField, index) => (
+
+            <React.Fragment key={index}>
+
+              <h1>{formField.occupation}</h1>
+              
+              </React.Fragment>
+            ))
+          }
+        </div>
         
         
       
