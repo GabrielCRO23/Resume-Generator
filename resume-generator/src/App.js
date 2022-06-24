@@ -14,7 +14,7 @@ import EducationHeader from './components/EducationHeader'
 import Education from './components/Education'
 import Work from './components/Work'
 import Preview from './components/Preview'
-import AppInit from './AppInit'
+
 
 
 import { Routes, Route, Link } from "react-router-dom";
@@ -46,7 +46,13 @@ const theme = createTheme({
 
 function App() {
 
-  
+  const [formFields, setFormFields] = useState([
+    { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
+]);
+
+  const [formTwoFields, setFormTwoFields] = useState([
+  { school: "", certification: "", startdate: "", enddate: "" },
+]);
   
   const [isToggled, setIsToggled] = useState(false);
 
@@ -60,13 +66,39 @@ function App() {
 
 
 
-
+if (isToggled){
+  return <Preview></Preview>
+}
 
   return (
     <Container maxWidth="lg">
     <ThemeProvider theme={theme}>
     <div className="App">
-    { isToggled ? <Preview /*formFields={formFields} setFormFields={setFormFields}*/></Preview> : <AppInit isToggled={isToggled} setIsToggled={setIsToggled}></AppInit> }
+    <AppHeader></AppHeader>
+     
+     <Box my={10}>
+     <PersonalHeader></PersonalHeader>
+     <Personal></Personal>
+     </Box>
+     
+     <hr color="#35342f"></hr>
+     <WorkHeader></WorkHeader>
+     <Work formFields={formFields} setFormFields={setFormFields}></Work>
+     
+     
+   
+              
+
+
+     
+     <hr color="#35342f"></hr>
+     <EducationHeader></EducationHeader>
+     <Education formTwoFields={formTwoFields} setFormTwoFields={setFormTwoFields}></Education>
+     
+    <hr></hr>
+    
+    
+    <Button color="secondary" variant="contained" onClick={() => setIsToggled(!isToggled)}>Preview Resume</Button>
      
     
     </div>
