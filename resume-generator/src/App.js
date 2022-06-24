@@ -13,6 +13,23 @@ import WorkHeader from './components/WorkHeader'
 import EducationHeader from './components/EducationHeader'
 import Education from './components/Education'
 import Work from './components/Work'
+import Preview from './components/Preview'
+import AppInit from './AppInit'
+
+
+import { Routes, Route, Link } from "react-router-dom";
+
+
+/*
+{
+                formFields.map((formField) => (
+                  
+                  <h1>{formField.occupation}</h1>
+                  
+                ))
+              }
+*/
+
 
 const theme = createTheme({
   palette: {
@@ -29,13 +46,15 @@ const theme = createTheme({
 
 function App() {
   
-  const [formFields, setFormFields] = useState([
-    { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
-]);
+  const [isToggled, setIsToggled] = useState(false);
 
-  const [formTwoFields, setFormTwoFields] = useState([
-  { school: "", certification: "", startdate: "", enddate: "" },
-]);
+//...//
+
+  // have some way to change the preview mode
+  // if they are not in preview mode, display the form to change values
+  // if they are in preview mode, display your previewing component
+
+
 
 
 
@@ -45,34 +64,38 @@ function App() {
     <Container maxWidth="lg">
     <ThemeProvider theme={theme}>
     <div className="App">
-      
-     <AppHeader></AppHeader>
+    { isToggled ? <Preview></Preview> : <AppInit isToggled={isToggled} setIsToggled={setIsToggled}></AppInit> }
      
-     <Box my={10}>
-     <PersonalHeader></PersonalHeader>
-     <Personal></Personal>
-     </Box>
-     
-     <hr color="#35342f"></hr>
-     <WorkHeader></WorkHeader>
-     <Work formFields={formFields} setFormFields={setFormFields}></Work>
-     
-
-     
-     
-
-
-     
-     <hr color="#35342f"></hr>
-     <EducationHeader></EducationHeader>
-     <Education formTwoFields={formTwoFields} setFormTwoFields={setFormTwoFields}></Education>
-     
-    <hr></hr>
-    <Button variant="contained" color="secondary">Preview Resume</Button>
+    
     </div>
+    
     </ThemeProvider>
     </Container>
   );
 }
 
 export default App;
+
+/*
+
+<Routes>
+        <Route path="/" element={<Preview />} />
+        <Route path="preview" element={<Preview />} />
+      </Routes>
+{ isToggled && <Preview formFields={formFields} setFormFields={setFormFields}></Preview> }
+
+
+function handleLog(){
+        
+  formFields.forEach((formField) => {
+      console.log(formField.occupation)
+      console.log(formField.employer)
+      console.log(formField.startdate)
+      console.log(formField.enddate)
+      console.log(formField.duties)
+  })
+  
+  
+}
+
+      */
