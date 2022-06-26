@@ -12,7 +12,7 @@ const AppHeader = function() {
           Resume Generator
         </Typography>
         <Typography variant='subtitle1' color="primary.dark">
-          Made by Gabriel Hrastovic
+          Gabriel Hrastovic © 2022
         </Typography>
         
     </AppBar>

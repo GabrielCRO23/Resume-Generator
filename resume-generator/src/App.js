@@ -46,6 +46,10 @@ const theme = createTheme({
 
 function App() {
 
+  const [personalInfo, setPersonalInfo] = useState([
+    { firstname: "", lastname: "", email: "", phonenumber: "", }
+  ])
+
   const [formFields, setFormFields] = useState([
     { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
 ]);
@@ -67,7 +71,11 @@ function App() {
 
 
 if (isToggled){
-  return <Preview></Preview>
+  return <Preview formFields={formFields} setFormFields={setFormFields} 
+  personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
+  isToggle={isToggled} setIsToggled={setIsToggled}
+  
+  ></Preview>
 }
 
   return (
@@ -78,7 +86,7 @@ if (isToggled){
      
      <Box my={10}>
      <PersonalHeader></PersonalHeader>
-     <Personal></Personal>
+     <Personal personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}></Personal>
      </Box>
      
      <hr color="#35342f"></hr>

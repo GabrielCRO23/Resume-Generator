@@ -6,19 +6,31 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 
 
-const Personal = function(){
+const Personal = function({personalInfo, setPersonalInfo}){
+
+
+    function handleChangeInput(event){
+        const values = [...personalInfo];
+        values[event.target.name] = event.target.value
+        setPersonalInfo(values);
+    }
+
+
     return (
         
           
       <Grid container spacing={3}>
           
+          
         <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'
           placeholder='First Name'
-          id='first-name'
+          name='firstname'
           color="secondary"
           fullWidth
+          onChange={event => handleChangeInput(event)}
+          value={personalInfo.firstname}
           
               />
          </Grid>
@@ -27,9 +39,11 @@ const Personal = function(){
          <TextField
           variant='filled'
           placeholder='Last Name'
-          id='last-name'
+          name='lastname'
           color="secondary"
           fullWidth
+          onChange={event => handleChangeInput(event)}
+          value={personalInfo.lastname}
           
            />
         </Grid>
@@ -38,10 +52,12 @@ const Personal = function(){
          <TextField
           variant='filled'
           placeholder='Email'
-          id='email'
+          name='email'
           type="email"
           color="secondary"
           fullWidth
+          onChange={event => handleChangeInput(event)}
+          value={personalInfo.email}
           
         />
     </Grid>
@@ -50,9 +66,11 @@ const Personal = function(){
          <TextField
           variant='filled'
           placeholder='Phone Number'
-          id='phone-number'
+          name='phonenumber'
           color="secondary"
           fullWidth
+          onChange={event => handleChangeInput(event)}
+          value={personalInfo.phonenumber}
           
       />
  </Grid>
