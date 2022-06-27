@@ -6,6 +6,13 @@ body {
   margin-bottom: 10vh;
 }
 
+/*
+React quill is bugged af and makes 2 toolbars for some reason so I'm hiding the first one
+*/
+
+.quill > .ql-toolbar:first-child {
+  display: none !important;
+}
 
 
 

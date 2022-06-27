@@ -14,6 +14,11 @@ import EducationHeader from './components/EducationHeader'
 import Education from './components/Education'
 import Work from './components/Work'
 import Preview from './components/Preview'
+import parse from 'html-react-parser';
+
+
+
+
 
 
 
@@ -44,7 +49,14 @@ const theme = createTheme({
   },
 });
 
+
+
+
+
 function App() {
+
+
+  
 
   const [personalInfo, setPersonalInfo] = useState([
     { firstname: "", lastname: "", title: "", website: "", address: "", email: "", phonenumber: "", }
@@ -57,6 +69,8 @@ function App() {
   const [formTwoFields, setFormTwoFields] = useState([
   { school: "", certification: "", startdate: "", enddate: "" },
 ]);
+
+const [value, setValue] =  useState("");
   
   const [isToggled, setIsToggled] = useState(false);
 
@@ -72,7 +86,8 @@ function App() {
 
 if (isToggled){
   document.body.style.backgroundColor = "white"
-  return <Preview formFields={formFields} setFormFields={setFormFields} 
+  return <Preview formFields={formFields} setFormFields={setFormFields}
+  value={value} setValue={setValue} 
   formTwoFields={formTwoFields} setFormTwoFields={setFormFields} 
   personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
   isToggle={isToggled} setIsToggled={setIsToggled}
@@ -82,11 +97,15 @@ if (isToggled){
 }
   document.body.style.backgroundColor = "#e1e0dd"
   return (
+    
     <Container maxWidth="lg" >
     <ThemeProvider theme={theme}>
+    
     <div className="App">
+
+      
     <AppHeader></AppHeader>
-     
+    
      <Box my={10}>
      <PersonalHeader></PersonalHeader>
      <Personal personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}></Personal>
@@ -94,10 +113,12 @@ if (isToggled){
      
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
-     <Work formFields={formFields} setFormFields={setFormFields}></Work>
+     <Work formFields={formFields} setFormFields={setFormFields} value={value} setValue={setValue} ></Work>
      
      
-   
+     
+
+     
               
 
 

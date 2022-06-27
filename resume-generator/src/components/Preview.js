@@ -5,9 +5,10 @@ import { ThemeProvider, createTheme, responsiveFontSizes} from '@mui/material/st
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import parse from 'html-react-parser';
 
 
-const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled}){
+const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled, value, setValue}){
 
  
   let theme = createTheme({
@@ -63,7 +64,7 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
               <Typography variant="h5">{formField.employer}</Typography>
               <Typography variant="h5">{formField.startdate}</Typography>
               <Typography variant="h5">{formField.enddate}</Typography>
-              <Typography variant="h5">{formField.duties}</Typography>
+              <Typography variant="h5">{parse(value)}</Typography>
               
               
               </React.Fragment>

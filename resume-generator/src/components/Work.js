@@ -5,9 +5,13 @@ import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import parse from 'html-react-parser';
 
 
-const Work = function({formFields, setFormFields}){
+const Work = function({formFields, setFormFields, value, setValue}){
+
     
 
     function handleChangeInput(index, event){
@@ -15,6 +19,7 @@ const Work = function({formFields, setFormFields}){
         values[index][event.target.name] = event.target.value
         setFormFields(values);
     }
+
 
     function handleAdd(){
         setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }])
@@ -26,20 +31,9 @@ const Work = function({formFields, setFormFields}){
         setFormFields(values)
     }
 
+   
     
 
-    function handleLog(){
-        
-        formFields.forEach((formField) => {
-            console.log(formField.occupation)
-            console.log(formField.employer)
-            console.log(formField.startdate)
-            console.log(formField.enddate)
-            console.log(formField.duties)
-        })
-        
-        
-    }
 
    
 
@@ -111,24 +105,21 @@ const Work = function({formFields, setFormFields}){
  </Grid>
 
         <Grid item xs={12} sm={12}>
-         <TextField
-          variant='filled'
-          placeholder="Write about your job duties"
-          name='duties'
-          color="secondary"
-          fullWidth
-          multiline
-          rows='6'
-          value={formField.duties}
-          onChange={event => handleChangeInput(index, event)}
-          
-      />
+            
+        <ReactQuill theme="snow" onChange={setValue} defaultValue={value}
+
+        />
+         
+       
+      
+      
       <hr></hr>
  </Grid>
  <Grid item xs={12} sm={12}>
        <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
+       
    </Grid>
-   
+   <p>{}</p>
  </React.Fragment>
 ))
 }
@@ -156,6 +147,40 @@ const Work = function({formFields, setFormFields}){
     )
 }
 
+
+/*
+
+<TextField
+          variant='filled'
+          placeholder="Write about your job duties"
+          name='duties'
+          color="secondary"
+          fullWidth
+          multiline
+          rows='6'
+          value={formField.duties}
+          onChange={event => handleChangeInput(index, event)}
+          
+      />
+
+
+
+      <CKEditor
+          editor={ClassicEditor}
+          data={text}
+          onReady={ editor => {
+            // You can store the "editor" and use when it is needed.
+            console.log( 'Editor1 is ready to use!', editor );
+        } }
+            
+          
+          onChange={(editor) => {
+              const data = editor.getData()
+              setText(data)
+          }}
+      />
+
+      */
 
 
 export default Work
