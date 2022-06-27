@@ -9,9 +9,9 @@ import Grid from '@mui/material/Grid';
 const Personal = function({personalInfo, setPersonalInfo}){
 
 
-    function handleChangeInput(event){
+    function handleChangeInput(index, event){
         const values = [...personalInfo];
-        values[event.target.name] = event.target.value
+        values[index][event.target.name] = event.target.value
         setPersonalInfo(values);
     }
 
@@ -20,8 +20,11 @@ const Personal = function({personalInfo, setPersonalInfo}){
         
           
       <Grid container spacing={3}>
+
+{
+                personalInfo.map((personal, index) => (
           
-          
+          <React.Fragment key={index}>
         <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'
@@ -29,8 +32,8 @@ const Personal = function({personalInfo, setPersonalInfo}){
           name='firstname'
           color="secondary"
           fullWidth
-          onChange={event => handleChangeInput(event)}
-          value={personalInfo.firstname}
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.firstname}
           
               />
          </Grid>
@@ -42,8 +45,8 @@ const Personal = function({personalInfo, setPersonalInfo}){
           name='lastname'
           color="secondary"
           fullWidth
-          onChange={event => handleChangeInput(event)}
-          value={personalInfo.lastname}
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.lastname}
           
            />
         </Grid>
@@ -56,8 +59,8 @@ const Personal = function({personalInfo, setPersonalInfo}){
           type="email"
           color="secondary"
           fullWidth
-          onChange={event => handleChangeInput(event)}
-          value={personalInfo.email}
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.email}
           
         />
     </Grid>
@@ -69,11 +72,14 @@ const Personal = function({personalInfo, setPersonalInfo}){
           name='phonenumber'
           color="secondary"
           fullWidth
-          onChange={event => handleChangeInput(event)}
-          value={personalInfo.phonenumber}
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.phonenumber}
           
       />
  </Grid>
+ </React.Fragment>
+ ))
+}
 </Grid>
         
         

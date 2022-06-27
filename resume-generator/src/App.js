@@ -71,15 +71,18 @@ function App() {
 
 
 if (isToggled){
+  document.body.style.backgroundColor = "white"
   return <Preview formFields={formFields} setFormFields={setFormFields} 
+  formTwoFields={formTwoFields} setFormTwoFields={setFormFields} 
   personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
   isToggle={isToggled} setIsToggled={setIsToggled}
-  
-  ></Preview>
-}
 
+  ></Preview>
+  
+}
+  document.body.style.backgroundColor = "#e1e0dd"
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" >
     <ThemeProvider theme={theme}>
     <div className="App">
     <AppHeader></AppHeader>
