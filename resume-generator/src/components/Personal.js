@@ -51,6 +51,45 @@ const Personal = function({personalInfo, setPersonalInfo}){
            />
         </Grid>
 
+        <Grid item xs={12} sm={6}>
+         <TextField
+          variant='filled'
+          placeholder='Your Title'
+          name='title'
+          color="secondary"
+          fullWidth
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.title}
+          
+           />
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+         <TextField
+          variant='filled'
+          placeholder='Personal Website'
+          name='website'
+          color="secondary"
+          fullWidth
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.website}
+          
+           />
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+         <TextField
+          variant='filled'
+          placeholder='Address'
+          name='address'
+          color="secondary"
+          fullWidth
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.address}
+          
+           />
+        </Grid>
+
      <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'

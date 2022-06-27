@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, responsiveFontSizes} from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 
 const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled}){
 
  
-  const theme = createTheme({
+  let theme = createTheme({
     palette: {
       primary: {
         main: '#fff',
@@ -21,18 +22,28 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
       },
     },
   });
+  theme = responsiveFontSizes(theme);
 
 
     return(
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
       <ThemeProvider theme={theme}>
        
         <div>
         {
             personalInfo.map((personal, index) => (
               <React.Fragment key={index}>
-              <Typography variant="h2">{personal.firstname}</Typography>
-              <Typography variant="h2">{personal.lastname}</Typography>
+                <Box mt={5} sx={{display: 'flex', justifyContent: 'center',}}>
+              <Typography variant="h3">{personal.firstname}&nbsp;</Typography>
+              <Typography color="secondary"variant="h3">{personal.lastname}</Typography>
+              </Box>
+              <Box sx={{display: 'flex', justifyContent: 'center'}}>
+              <Typography variant="body1">{personal.title}</Typography>
+              </Box>
+              <Box sx={{display: 'flex', justifyContent: 'center'}}>
+              <Typography variant="subtitle1">{personal.address}</Typography>
+              </Box>
+              <hr></hr>
               <Typography variant="h5">{personal.email}</Typography>
               <Typography variant="h5">{personal.phonenumber}</Typography>
               </React.Fragment>
@@ -50,6 +61,9 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
               
               <Typography variant="h5">{formField.occupation}</Typography>
               <Typography variant="h5">{formField.employer}</Typography>
+              <Typography variant="h5">{formField.startdate}</Typography>
+              <Typography variant="h5">{formField.enddate}</Typography>
+              <Typography variant="h5">{formField.duties}</Typography>
               
               
               </React.Fragment>

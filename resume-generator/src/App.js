@@ -47,7 +47,7 @@ const theme = createTheme({
 function App() {
 
   const [personalInfo, setPersonalInfo] = useState([
-    { firstname: "", lastname: "", email: "", phonenumber: "", }
+    { firstname: "", lastname: "", title: "", website: "", address: "", email: "", phonenumber: "", }
   ])
 
   const [formFields, setFormFields] = useState([
