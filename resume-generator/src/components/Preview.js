@@ -10,29 +10,12 @@ import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link'
 import SkillsHeader from './SkillsHeader'
 
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
+
 
 
 
 const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled, value, setValue, skills, setSkills}){
 
-  const printRef = React.useRef();
-
-  const handleDownloadPdf = async () => {
-    const element = printRef.current;
-    const canvas = await html2canvas(element);
-    const data = canvas.toDataURL('image/png');
-
-    const pdf = new jsPDF();
-    const imgProperties = pdf.getImageProperties(data);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight =
-      (imgProperties.height * pdfWidth) / imgProperties.width;
-
-    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('Resume.pdf');
-  };
 
 
 
@@ -56,7 +39,7 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
       
       <ThemeProvider theme={theme}>
        
-        <div ref={printRef}>
+        <div>
         <Container maxWidth="xl">
 
           
@@ -135,9 +118,9 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
 
       </Container>
         </div>
-        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <Box className="noprint" sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Button color="secondary" variant="contained" onClick={() => setIsToggled(isToggled)}>Back to editing</Button>
-          <Button color="secondary" variant="contained" onClick={handleDownloadPdf}>
+          <Button color="secondary" variant="contained" onClick={()=> window.print()}>
         Download resume as PDF
       </Button>
       </Box>

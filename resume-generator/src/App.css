@@ -27,3 +27,8 @@ React quill is bugged af and makes 2 toolbars for some reason so I'm hiding the 
   color: white;
 }
 
+@media print{
+  .noprint{
+      display:none !important;
+  }
+}
