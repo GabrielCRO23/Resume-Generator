@@ -80,6 +80,19 @@ const Personal = function({personalInfo, setPersonalInfo}){
         <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'
+          placeholder='Other Website'
+          name='websitetwo'
+          color="secondary"
+          fullWidth
+          onChange={event => handleChangeInput(index, event)}
+          value={personal.websitetwo}
+          
+           />
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+         <TextField
+          variant='filled'
           placeholder='Address'
           name='address'
           color="secondary"

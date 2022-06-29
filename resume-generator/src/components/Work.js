@@ -106,7 +106,7 @@ const Work = function({formFields, setFormFields, value, setValue}){
 
         <Grid item xs={12} sm={12}>
             
-        <ReactQuill theme="snow" onChange={setValue} defaultValue={value}
+        <ReactQuill style={{backgroundColor: "white"}} theme="snow" onChange={setValue} defaultValue={value} placeholder="Write about your experience or project here.."
 
         />
          
