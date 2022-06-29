@@ -8,8 +8,9 @@ import Box from '@mui/material/Box';
 import parse from 'html-react-parser';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link'
+import SkillsHeader from './SkillsHeader'
 
-const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled, value, setValue}){
+const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled, value, setValue, skills, setSkills}){
 
  
   let theme = createTheme({
@@ -55,10 +56,19 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
               <Divider color="black" orientation="vertical" flexItem></Divider>
               <Link href={personal.websitetwo} color="#000000" variant="subtitle2">{personal.websitetwo}</Link>
               </Box>
-              <hr></hr>
+              
               </React.Fragment>
               ))
             }
+
+
+              <React.Fragment>
+                <Typography variant="h4" align="left" sx={{fontWeight: 'bold'}}>Skills</Typography>
+                <hr></hr>
+                <Typography sx={{ lineHeight: 0.5}} variant="subtitle2">{parse(skills)}</Typography>
+                <hr></hr>
+              </React.Fragment>
+              
         
         
         

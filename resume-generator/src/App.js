@@ -11,8 +11,10 @@ import Personal from './components/Personal'
 import PersonalHeader from './components/PersonalHeader'
 import WorkHeader from './components/WorkHeader'
 import EducationHeader from './components/EducationHeader'
+import SkillsHeader from './components/SkillsHeader'
 import Education from './components/Education'
 import Work from './components/Work'
+import Skills from './components/Skills'
 import Preview from './components/Preview'
 import parse from 'html-react-parser';
 
@@ -71,6 +73,8 @@ function App() {
 ]);
 
 const [value, setValue] =  useState("");
+
+const [skills, setSkills] = useState("")
   
   const [isToggled, setIsToggled] = useState(false);
 
@@ -87,7 +91,8 @@ const [value, setValue] =  useState("");
 if (isToggled){
   document.body.style.backgroundColor = "white"
   return <Preview formFields={formFields} setFormFields={setFormFields}
-  value={value} setValue={setValue} 
+  value={value} setValue={setValue}
+  skills={skills} setSkills={setSkills} 
   formTwoFields={formTwoFields} setFormTwoFields={setFormFields} 
   personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
   isToggle={isToggled} setIsToggled={setIsToggled}
@@ -110,6 +115,12 @@ if (isToggled){
      <PersonalHeader></PersonalHeader>
      <Personal personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}></Personal>
      </Box>
+     <hr color="#35342f"></hr>
+
+
+     <SkillsHeader></SkillsHeader>
+     <Skills skills={skills} setSkills={setSkills}></Skills>
+     
      
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>

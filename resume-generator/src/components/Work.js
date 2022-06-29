@@ -119,7 +119,7 @@ const Work = function({formFields, setFormFields, value, setValue}){
        <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
        
    </Grid>
-   <p>{}</p>
+   
  </React.Fragment>
 ))
 }
