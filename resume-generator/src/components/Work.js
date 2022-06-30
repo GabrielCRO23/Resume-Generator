@@ -10,19 +10,27 @@ import 'react-quill/dist/quill.snow.css';
 import parse from 'html-react-parser';
 
 
-const Work = function({formFields, setFormFields, value, setValue}){
+
+
+const Work = function({formFields, setFormFields, values, setValues}){
 
     
 
+
+
+
     function handleChangeInput(index, event){
+        console.log(event)
         const values = [...formFields];
         values[index][event.target.name] = event.target.value
         setFormFields(values);
     }
 
 
+
     function handleAdd(){
         setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }])
+        setValues([...values, {value: ""}])
     }
 
     function handleRemove(index){
@@ -105,12 +113,16 @@ const Work = function({formFields, setFormFields, value, setValue}){
  </Grid>
 
         <Grid item xs={12} sm={12}>
-            
-        <ReactQuill style={{backgroundColor: "white"}} theme="snow" onChange={setValue} defaultValue={value} placeholder="Write about your experience or project here.."
 
-        />
-         
-       
+        <ReactQuill 
+                style={{backgroundColor: "white"}} 
+                theme="snow" 
+                onChange={ setValues }
+                
+    
+                placeholder="Write about your experience or project here.."
+
+            />
       
       
       <hr></hr>
@@ -133,6 +145,8 @@ const Work = function({formFields, setFormFields, value, setValue}){
 
   
       Add experience</Button>
+
+            
       
       </Grid>    
        

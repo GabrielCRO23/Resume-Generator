@@ -60,19 +60,21 @@ function App() {
 
   
 
+  
+
   const [personalInfo, setPersonalInfo] = useState([
     { firstname: "", lastname: "", title: "", website: "", websitetwo: "", address: "", email: "", phonenumber: "", }
   ])
 
   const [formFields, setFormFields] = useState([
-    { occupation: "", employer: "", startdate: "", enddate: "", duties: "" },
+    { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }
 ]);
 
   const [formTwoFields, setFormTwoFields] = useState([
   { school: "", certification: "", startdate: "", enddate: "" },
 ]);
 
-const [value, setValue] =  useState("");
+const [values, setValues] =  useState("")
 
 const [skills, setSkills] = useState("")
   
@@ -91,7 +93,7 @@ const [skills, setSkills] = useState("")
 if (isToggled){
   document.body.style.backgroundColor = "white"
   return <Preview formFields={formFields} setFormFields={setFormFields}
-  value={value} setValue={setValue}
+  values={values} setValues={setValues}
   skills={skills} setSkills={setSkills} 
   formTwoFields={formTwoFields} setFormTwoFields={setFormFields} 
   personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
@@ -124,7 +126,7 @@ if (isToggled){
      
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
-     <Work formFields={formFields} setFormFields={setFormFields} value={value} setValue={setValue} ></Work>
+     <Work formFields={formFields} setFormFields={setFormFields} values={values} setValues={setValues}></Work>
      
      
      

@@ -9,14 +9,21 @@ import parse from 'html-react-parser';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link'
 import SkillsHeader from './SkillsHeader'
+import WorkHeader from './WorkHeader'
+import TextField from '@mui/material/TextField';
 
 
 
 
+const Preview = function({formFields, setFormFields, 
+  formTwoFields, setFormTwoFields, 
+  personalInfo, setPersonalInfo, 
+  isToggled, setIsToggled,
+  values, setValues, 
+  skills, setSkills}){
 
-const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFields, personalInfo, setPersonalInfo, isToggled, setIsToggled, value, setValue, skills, setSkills}){
-
-
+    const [name, setName] = React.useState("Experience");
+    const [isNameFocused, setIsNamedFocused] = React.useState(false);
 
 
  
@@ -59,11 +66,11 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
               
               <Box mt={2.5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'}, flexDirection: {xs: 'column', md: 'row'} }}>
               <Typography variant="subtitle2">{personal.phonenumber}</Typography>
-              <Divider color="black" orientation="vertical" flexItem></Divider>
+              <Divider color="#000000" orientation="vertical" flexItem></Divider>
               <Typography variant="subtitle2">{personal.email}</Typography>
-              <Divider color="black" orientation="vertical" flexItem></Divider>
+              <Divider color="#000000" orientation="vertical" flexItem></Divider>
               <Link href={personal.website} color="#000000" variant="subtitle2">{personal.website}</Link>
-              <Divider color="black" orientation="vertical" flexItem></Divider>
+              <Divider color="#000000" orientation="vertical" flexItem></Divider>
               <Link href={personal.websitetwo} color="#000000" variant="subtitle2">{personal.websitetwo}</Link>
               </Box>
               
@@ -76,24 +83,39 @@ const Preview = function({formFields, setFormFields, formTwoFields, setFormTwoFi
                 <Typography variant="h4" align="left" sx={{fontWeight: 'bold'}}>Skills</Typography>
                 <hr></hr>
                 <Typography sx={{ lineHeight: 0.5}} variant="subtitle2">{parse(skills)}</Typography>
-                <hr></hr>
+                
               </React.Fragment>
               
         
-        
-        
-        
+              {!isNameFocused ? (
+        <Typography variant="h4" align="left" sx={{fontWeight: 'bold'}} onClick={() => {setIsNamedFocused(true); }} > {name} </Typography>
+      ) : (
+        <TextField
+          autoFocus
+          value={name}
+          onChange={event => setName(event.target.value)}
+          onBlur={event => setIsNamedFocused(false)}
+          
+        />
+      )}
+              <hr></hr>
+              
+
+
         
         {
             formFields.map((formField, index) => (
+              
 
             <React.Fragment key={index}>
+              
               
               <Typography variant="h5">{formField.occupation}</Typography>
               <Typography variant="h5">{formField.employer}</Typography>
               <Typography variant="h5">{formField.startdate}</Typography>
               <Typography variant="h5">{formField.enddate}</Typography>
-              <Typography color="red" variant="h5">{parse(value)}</Typography>
+              <Typography variant="h5">{parse(values)}</Typography>
+              
               
               
               </React.Fragment>
@@ -150,5 +172,8 @@ export default Preview
       
     ))
   }
+
+{parse(formField.duties)}
+
 
   */
