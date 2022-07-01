@@ -19,10 +19,9 @@ const Work = function({formFields, setFormFields, values, setValues}){
 
 
 
-    function handleChangeInput(index, event){
-        console.log(event)
+    function handleChangeInput(index, targetName, targetValue){
         const values = [...formFields];
-        values[index][event.target.name] = event.target.value
+        values[index][targetName] = targetValue
         setFormFields(values);
     }
 
@@ -68,7 +67,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           color="secondary"
           fullWidth
           value={formField.occupation}
-          onChange={event => handleChangeInput(index, event)}
+          onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
           
               />
          </Grid>
@@ -81,7 +80,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           color="secondary"
           fullWidth
           value={formField.employer}
-          onChange={event => handleChangeInput(index, event)}
+          onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
            />
         </Grid>
 
@@ -94,7 +93,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           color="secondary"
           fullWidth
           value={formField.startdate}
-          onChange={event => handleChangeInput(index, event)}
+          onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
           
         />
     </Grid>
@@ -108,7 +107,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           color="secondary"
           fullWidth
           value={formField.enddate}
-          onChange={event => handleChangeInput(index, event)}
+          onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
       />
  </Grid>
 
@@ -117,8 +116,8 @@ const Work = function({formFields, setFormFields, values, setValues}){
         <ReactQuill 
                 style={{backgroundColor: "white"}} 
                 theme="snow" 
-                onChange={ setValues }
-                
+                onChange={ value => handleChangeInput(index, 'duties', value) }
+                value = { formField.duties }
     
                 placeholder="Write about your experience or project here.."
 

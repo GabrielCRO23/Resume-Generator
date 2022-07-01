@@ -114,7 +114,7 @@ const Preview = function({formFields, setFormFields,
               <Typography variant="h5">{formField.employer}</Typography>
               <Typography variant="h5">{formField.startdate}</Typography>
               <Typography variant="h5">{formField.enddate}</Typography>
-              <Typography variant="h5">{parse(values)}</Typography>
+              <Typography variant="h5">{parse(formField.duties)}</Typography>
               
               
               
