@@ -69,9 +69,9 @@ const Preview = function({formFields, setFormFields,
               <Divider color="#000000" orientation="vertical" flexItem></Divider>
               <Typography variant="subtitle2">{personal.email}</Typography>
               <Divider color="#000000" orientation="vertical" flexItem></Divider>
-              <Link href={personal.website} color="#000000" variant="subtitle2">{personal.website}</Link>
+              <Link href={personal.website} color="#000000" underline="none" variant="subtitle2">{personal.website}</Link>
               <Divider color="#000000" orientation="vertical" flexItem></Divider>
-              <Link href={personal.websitetwo} color="#000000" variant="subtitle2">{personal.websitetwo}</Link>
+              <Link href={personal.websitetwo} color="#000000" underline="none" variant="subtitle2">{personal.websitetwo}</Link>
               </Box>
               
               </React.Fragment>
@@ -80,24 +80,16 @@ const Preview = function({formFields, setFormFields,
 
 
               <React.Fragment>
-                <Typography variant="h4" align="left" sx={{fontWeight: 'bold'}}>Skills</Typography>
+                <Typography variant="h4" align="left">Skills</Typography>
                 <hr></hr>
                 <Typography sx={{ lineHeight: 0.5}} variant="subtitle2">{parse(skills)}</Typography>
                 
               </React.Fragment>
               
         
-              {!isNameFocused ? (
-        <Typography variant="h4" align="left" sx={{fontWeight: 'bold'}} onClick={() => {setIsNamedFocused(true); }} > {name} </Typography>
-      ) : (
-        <TextField
-          autoFocus
-          value={name}
-          onChange={event => setName(event.target.value)}
-          
-          
-        />
-      )}
+              
+        <Typography variant="h4" align="left"  > Experience </Typography>
+      
               <hr></hr>
               
 
