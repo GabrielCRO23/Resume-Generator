@@ -10,7 +10,7 @@ import 'react-quill/dist/quill.snow.css';
 
 const Skills = function({skills, setSkills}){
     return(
-        <ReactQuill style={{backgroundColor: "white"}} theme="snow" onChange={setSkills} defaultValue={skills} placeholder="Write your skills here..."
+        <ReactQuill style={{backgroundColor: "white"}} theme="snow" onChange={setSkills} defaultValue={skills} placeholder="Write your skills here, be sure to format it how you want it to look on the resume"
         />
     )
 }

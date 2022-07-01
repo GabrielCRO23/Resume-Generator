@@ -36,7 +36,7 @@ const Education = function({formTwoFields, setFormTwoFields}){
             variant='filled'
             placeholder='Name of School'
             name="school"
-            color="secondary"
+            color="primary"
             fullWidth
             value={formTwoField.school}
             onChange={event => handleChangeInput(index, event)}
@@ -49,7 +49,7 @@ const Education = function({formTwoFields, setFormTwoFields}){
             variant='filled'
             placeholder='Certification or degree acquired'
             name="certification"
-            color="secondary"
+            color="primary"
             fullWidth
             value={formTwoField.certification}
             onChange={event => handleChangeInput(index, event)}
@@ -63,7 +63,7 @@ const Education = function({formTwoFields, setFormTwoFields}){
             placeholder="mm/dd/yyyy"
             label='Start Date'
             name="startdate"
-            color="secondary"
+            color="primary"
             fullWidth
             value={formTwoField.startdate}
             onChange={event => handleChangeInput(index, event)}
@@ -77,7 +77,7 @@ const Education = function({formTwoFields, setFormTwoFields}){
             label='End Date' 
             placeholder="mm/dd/yyyy"
             name="enddate"
-            color="secondary"
+            color="primary"
             fullWidth
             value={formTwoField.enddate}
             onChange={event => handleChangeInput(index, event)}
@@ -86,7 +86,7 @@ const Education = function({formTwoFields, setFormTwoFields}){
     
    </Grid>
    <Grid item xs={12} sm={12}>
-       <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
+       <Button onClick={() => handleRemove(index)} variant="outlined" color="secondary">Delete</Button>
    </Grid>
    </React.Fragment>
 ))
@@ -94,8 +94,8 @@ const Education = function({formTwoFields, setFormTwoFields}){
 
 
 <Grid item xs={12} sm={12}>
-   <Button onClick={() => handleAdd()}variant="contained" color="secondary" sx={{
-       margin:'2rem'
+   <Button onClick={() => handleAdd()}variant="outlined" color="secondary" sx={{
+       
      }}>
        
        

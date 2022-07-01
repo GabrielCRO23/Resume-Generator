@@ -11,7 +11,7 @@ import Link from '@mui/material/Link'
 import SkillsHeader from './SkillsHeader'
 import WorkHeader from './WorkHeader'
 import TextField from '@mui/material/TextField';
-
+import '@fontsource/roboto/300.css';
 
 
 
@@ -34,7 +34,7 @@ const Preview = function({formFields, setFormFields,
         dark: '#35342f',
       },
       secondary: {
-        main: '#37bbe4',
+        main: '#107206',
         dark: '#fff',
       },
     },
@@ -64,7 +64,7 @@ const Preview = function({formFields, setFormFields,
               <Typography variant="subtitle1">{personal.address}</Typography>
               </Box>
               
-              <Box mt={2.5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'}, flexDirection: {xs: 'column', md: 'row'} }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'}, flexDirection: {xs: 'column', md: 'row'} }}>
               <Typography variant="subtitle2">{personal.phonenumber}</Typography>
               <Divider color="#000000" orientation="vertical" flexItem></Divider>
               <Typography variant="subtitle2">{personal.email}</Typography>
@@ -94,7 +94,7 @@ const Preview = function({formFields, setFormFields,
           autoFocus
           value={name}
           onChange={event => setName(event.target.value)}
-          onBlur={event => setIsNamedFocused(false)}
+          
           
         />
       )}
@@ -141,8 +141,8 @@ const Preview = function({formFields, setFormFields,
       </Container>
         </div>
         <Box className="noprint" sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <Button color="secondary" variant="contained" onClick={() => setIsToggled(isToggled)}>Back to editing</Button>
-          <Button color="secondary" variant="contained" onClick={()=> window.print()}>
+        <Button color="secondary" variant="outlined" onClick={() => setIsToggled(isToggled)}>Back to editing</Button>
+          <Button color="secondary" variant="outlined" onClick={()=> window.print()}>
         Download resume as PDF
       </Button>
       </Box>

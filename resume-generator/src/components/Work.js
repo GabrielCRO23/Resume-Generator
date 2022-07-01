@@ -12,7 +12,7 @@ import parse from 'html-react-parser';
 
 
 
-const Work = function({formFields, setFormFields, values, setValues}){
+const Work = function({formFields, setFormFields}){
 
     
 
@@ -29,7 +29,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
 
     function handleAdd(){
         setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }])
-        setValues([...values, {value: ""}])
+        
     }
 
     function handleRemove(index){
@@ -64,7 +64,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           variant='filled'
           placeholder='Occupation'
           name='occupation'
-          color="secondary"
+          color="primary"
           fullWidth
           value={formField.occupation}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
@@ -77,7 +77,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           variant='filled'
           placeholder='Employer'
           name='employer'
-          color="secondary"
+          color="primary"
           fullWidth
           value={formField.employer}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
@@ -90,7 +90,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           placeholder="mm/dd/yyyy"
           label='Start Date'
           name='startdate'
-          color="secondary"
+          color="primary"
           fullWidth
           value={formField.startdate}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
@@ -104,7 +104,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
           label='End Date' 
           placeholder="mm/dd/yyyy"
           name='enddate'
-          color="secondary"
+          color="primary"
           fullWidth
           value={formField.enddate}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
@@ -119,7 +119,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
                 onChange={ value => handleChangeInput(index, 'duties', value) }
                 value = { formField.duties }
     
-                placeholder="Write about your experience or project here.."
+                placeholder="Write about your experience or project here, be sure to format it how you want it to look on the resume"
 
             />
       
@@ -127,7 +127,7 @@ const Work = function({formFields, setFormFields, values, setValues}){
       <hr></hr>
  </Grid>
  <Grid item xs={12} sm={12}>
-       <Button onClick={() => handleRemove(index)}color="primary" variant="contained">Delete</Button>
+       <Button onClick={() => handleRemove(index)}variant="outlined" color="secondary" >Delete</Button>
        
    </Grid>
    
@@ -135,8 +135,8 @@ const Work = function({formFields, setFormFields, values, setValues}){
 ))
 }
 <Grid item xs={12} sm={12}>
- <Button onClick={() => handleAdd()}variant="contained" color="secondary" sx={{
-       margin:'2rem'
+ <Button onClick={() => handleAdd()} variant="outlined" color="secondary" sx={{
+       
        }}>
 
 

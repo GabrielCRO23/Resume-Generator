@@ -27,6 +27,14 @@ React quill is bugged af and makes 2 toolbars for some reason so I'm hiding the 
   color: white;
 }
 
+.ql-container {
+  height: 15vh !important;
+}
+
+.ql-editor {
+  height: 15vh !important;
+}
+
 @media print{
   .noprint{
       display:none !important;

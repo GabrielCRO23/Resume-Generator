@@ -45,7 +45,7 @@ const theme = createTheme({
       dark: '#35342f',
     },
     secondary: {
-      main: '#37bbe4',
+      main: '#107206',
       dark: '#fff',
     },
   },
@@ -57,8 +57,6 @@ const theme = createTheme({
 
 function App() {
 
-
-  
 
   
 
@@ -74,7 +72,6 @@ function App() {
   { school: "", certification: "", startdate: "", enddate: "" },
 ]);
 
-const [values, setValues] =  useState("")
 
 const [skills, setSkills] = useState("")
   
@@ -93,7 +90,6 @@ const [skills, setSkills] = useState("")
 if (isToggled){
   document.body.style.backgroundColor = "white"
   return <Preview formFields={formFields} setFormFields={setFormFields}
-  values={values} setValues={setValues}
   skills={skills} setSkills={setSkills} 
   formTwoFields={formTwoFields} setFormTwoFields={setFormFields} 
   personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
@@ -102,7 +98,7 @@ if (isToggled){
   ></Preview>
   
 }
-  document.body.style.backgroundColor = "#e1e0dd"
+  document.body.style.backgroundColor = "#e4e8ee"
   return (
     
     <Container maxWidth="lg" >
@@ -126,7 +122,7 @@ if (isToggled){
      
      <hr color="#35342f"></hr>
      <WorkHeader></WorkHeader>
-     <Work formFields={formFields} setFormFields={setFormFields} values={values} setValues={setValues}></Work>
+     <Work formFields={formFields} setFormFields={setFormFields}></Work>
      
      
      
@@ -143,7 +139,7 @@ if (isToggled){
     <hr></hr>
     
     
-    <Button color="secondary" variant="contained" onClick={() => setIsToggled(!isToggled)}>Preview Resume</Button>
+    <Button color="secondary" variant="outlined" onClick={() => setIsToggled(!isToggled)}>Preview Resume</Button>
      
     
     </div>

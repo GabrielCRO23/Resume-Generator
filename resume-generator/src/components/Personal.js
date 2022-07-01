@@ -30,7 +30,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='First Name'
           name='firstname'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.firstname}
@@ -43,7 +43,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='Last Name'
           name='lastname'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.lastname}
@@ -56,7 +56,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='Your Title'
           name='title'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.title}
@@ -69,7 +69,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='Personal Website'
           name='website'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.website}
@@ -82,7 +82,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='Other Website'
           name='websitetwo'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.websitetwo}
@@ -95,7 +95,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='Address'
           name='address'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.address}
@@ -109,7 +109,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           placeholder='Email'
           name='email'
           type="email"
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.email}
@@ -122,7 +122,7 @@ const Personal = function({personalInfo, setPersonalInfo}){
           variant='filled'
           placeholder='Phone Number'
           name='phonenumber'
-          color="secondary"
+          color="primary"
           fullWidth
           onChange={event => handleChangeInput(index, event)}
           value={personal.phonenumber}
