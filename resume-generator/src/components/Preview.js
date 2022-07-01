@@ -18,12 +18,10 @@ import '@fontsource/roboto/300.css';
 const Preview = function({formFields, setFormFields, 
   formTwoFields, setFormTwoFields, 
   personalInfo, setPersonalInfo, 
-  isToggled, setIsToggled,
-  values, setValues, 
+  isToggled, setIsToggled, 
   skills, setSkills}){
 
-    const [name, setName] = React.useState("Experience");
-    const [isNameFocused, setIsNamedFocused] = React.useState(false);
+    
 
 
  
