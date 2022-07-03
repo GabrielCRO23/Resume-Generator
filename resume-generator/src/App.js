@@ -63,7 +63,7 @@ function App() {
   
 
   const [personalInfo, setPersonalInfo] = useState([
-    { firstname: "", lastname: "", title: "", website: "", websitetwo: "", address: "", email: "", phonenumber: "", }
+    { firstname: "", lastname: "", title: "", website: "", websitetwo: "", websitethree: "", address: "", email: "", phonenumber: "", }
   ])
 
   const [formFields, setFormFields] = useState([

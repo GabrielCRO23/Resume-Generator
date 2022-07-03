@@ -5,3 +5,7 @@ Frameworks/Libraries: React, Material UI, Jest, Express
 Misc: HTML, CSS, Git, GIMP, Linux OS
 
 Languages: English, Croatian, Korean, German
+
+this project uses:
+
+react, reactquill, material ui, html parse

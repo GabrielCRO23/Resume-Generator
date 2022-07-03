@@ -88,7 +88,7 @@ const Projects = function({projects, setProjects}){
         <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'
-          placeholder='Technology used or Additional info'
+          placeholder='Technology used or additional info'
           name='tech'
           color="primary"
           fullWidth
@@ -130,7 +130,7 @@ const Projects = function({projects, setProjects}){
           
 
   
-      Add experience</Button>
+      Add project</Button>
 
             
       

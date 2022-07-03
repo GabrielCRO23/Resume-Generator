@@ -71,6 +71,8 @@ const Preview = function({formFields, setFormFields,
               <Link href={personal.website} color="#000000" underline="none" variant="subtitle2">{personal.website}</Link>
               <Divider orientation="vertical" flexItem></Divider>
               <Link href={personal.websitetwo} color="#000000" underline="none" variant="subtitle2">{personal.websitetwo}</Link>
+              <Divider orientation="vertical" flexItem></Divider>
+              <Link href={personal.websitetwo} color="#000000" underline="none" variant="subtitle2">{personal.websitethree}</Link>
               </Box>
               
               </React.Fragment>
@@ -100,9 +102,12 @@ const Preview = function({formFields, setFormFields,
               
 
             <React.Fragment key={index}>
+              <Box sx={{display: 'flex'}}>
               <Typography ml={5} variant="h5" sx={{fontWeight: 700}}>{project.projectTitle}</Typography>
+              <Typography sx={{marginLeft: 'auto'}}ml={5} variant="h6">{project.tech}</Typography>
+              </Box>
               <Link ml={5} href={project.link} color="#000000" underline="none" sx={{fontStyle: 'italic'}}variant="h6">{project.link}</Link>
-              <Typography ml={5} variant="h6">{project.tech}</Typography>
+              
               <Typography ml={5} variant="h6">{parse(project.about)}</Typography>
               
               
