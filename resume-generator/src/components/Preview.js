@@ -17,7 +17,8 @@ import '@fontsource/roboto/300.css';
 
 const Preview = function({formFields, setFormFields, 
   formTwoFields, setFormTwoFields, 
-  personalInfo, setPersonalInfo, 
+  personalInfo, setPersonalInfo,
+  projects, setProjects, 
   isToggled, setIsToggled, 
   skills, setSkills}){
 
@@ -78,17 +79,47 @@ const Preview = function({formFields, setFormFields,
 
 
               <React.Fragment>
+                
                 <Typography variant="h4" align="left">Skills</Typography>
                 <hr></hr>
-                <Typography sx={{ lineHeight: 0.5}} variant="subtitle2">{parse(skills)}</Typography>
+                <Typography ml={5} sx={{ lineHeight: {md: 0.5, xs: 1}}} variant="subtitle2">{parse(skills)}</Typography>
                 
               </React.Fragment>
               
         
+
+
+
+        <Typography variant="h4" align="left"  > Projects </Typography>
+      
+       <hr></hr>
+
+
+{
+            projects.map((project, index) => (
+              
+
+            <React.Fragment key={index}>
+              <Typography ml={5} variant="h5" sx={{fontWeight: 700}}>{project.projectTitle}</Typography>
+              <Typography ml={5} variant="h6" sx={{fontStyle: 'italic'}}>{project.link}</Typography>
+              <Typography ml={5} variant="h6">{project.tech}</Typography>
+              <Typography ml={5} variant="h6">{parse(project.about)}</Typography>
+              
+              
+              
+              </React.Fragment>
+            ))
+          }
+
+
+
+
               
         <Typography variant="h4" align="left"  > Experience </Typography>
       
               <hr></hr>
+
+              
               
 
 
@@ -98,13 +129,18 @@ const Preview = function({formFields, setFormFields,
               
 
             <React.Fragment key={index}>
+              <Box sx={{display: 'flex'}}>
+              <Typography ml={5} sx={{fontWeight: 700}}variant="h5">{formField.employer}</Typography>
+              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formField.location}</Typography>
+              </Box>
+              <Box sx={{display: 'flex'}}>
+              <Typography ml={5} sx={{fontStyle: 'italic'}}variant="h6">{formField.occupation}</Typography>
+              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formField.startdate}&nbsp;-&nbsp;{formField.enddate}</Typography>
+              </Box>
+
               
               
-              <Typography variant="h5">{formField.occupation}</Typography>
-              <Typography variant="h5">{formField.employer}</Typography>
-              <Typography variant="h5">{formField.startdate}</Typography>
-              <Typography variant="h5">{formField.enddate}</Typography>
-              <Typography variant="h5">{parse(formField.duties)}</Typography>
+              <Typography ml={5} variant="h6">{parse(formField.duties)}</Typography>
               
               
               

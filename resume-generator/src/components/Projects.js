@@ -11,8 +11,7 @@ import parse from 'html-react-parser';
 
 
 
-
-const Work = function({formFields, setFormFields}){
+const Projects = function({projects, setProjects}){
 
     
 
@@ -20,22 +19,22 @@ const Work = function({formFields, setFormFields}){
 
 
     function handleChangeInput(index, targetName, targetValue){
-        const values = [...formFields];
+        const values = [...projects];
         values[index][targetName] = targetValue
-        setFormFields(values);
+        setProjects(values);
     }
 
 
 
     function handleAdd(){
-        setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", location:"", duties: "" }])
+        setProjects([...projects, { projectTitle: "", link: "", tech: "", about: ""}])
         
     }
 
     function handleRemove(index){
-        const values = [...formFields]
+        const values = [...projects]
         values.splice(index, 1)
-        setFormFields(values)
+        setProjects(values)
     }
 
    
@@ -54,7 +53,7 @@ const Work = function({formFields, setFormFields}){
 
             
             {
-                formFields.map((formField, index) => (
+                projects.map((project, index) => (
                     
              
         <React.Fragment key={index}>
@@ -62,11 +61,11 @@ const Work = function({formFields, setFormFields}){
          <TextField
           
           variant='filled'
-          placeholder='Occupation/Title'
-          name='occupation'
+          placeholder='Project Title'
+          name='projectTitle'
           color="primary"
           fullWidth
-          value={formField.occupation}
+          value={project.projectTitle}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
           
               />
@@ -76,11 +75,11 @@ const Work = function({formFields, setFormFields}){
          <TextField
           
           variant='filled'
-          placeholder='Location'
-          name='location'
+          placeholder='Project Link'
+          name='link'
           color="primary"
           fullWidth
-          value={formField.location}
+          value={project.link}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
           
               />
@@ -89,49 +88,23 @@ const Work = function({formFields, setFormFields}){
         <Grid item xs={12} sm={6}>
          <TextField
           variant='filled'
-          placeholder='Employer'
-          name='employer'
+          placeholder='Technology used or Additional info'
+          name='tech'
           color="primary"
           fullWidth
-          value={formField.employer}
+          value={project.tech}
           onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
            />
         </Grid>
 
-     <Grid item xs={12} sm={6}>
-         <TextField
-          variant='filled'
-          placeholder="mm/dd/yyyy"
-          label='Start Date'
-          name='startdate'
-          color="primary"
-          fullWidth
-          value={formField.startdate}
-          onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
-          
-        />
-    </Grid>
-
-        <Grid item xs={12} sm={6}>
-         <TextField
-          variant='filled'
-          label='End Date' 
-          placeholder="mm/dd/yyyy"
-          name='enddate'
-          color="primary"
-          fullWidth
-          value={formField.enddate}
-          onChange={event => handleChangeInput(index, event.target.name, event.target.value)}
-      />
- </Grid>
 
         <Grid item xs={12} sm={12}>
 
         <ReactQuill 
                 style={{backgroundColor: "white"}} 
                 theme="snow" 
-                onChange={ value => handleChangeInput(index, 'duties', value) }
-                defaultValue = { formField.duties }
+                onChange={ value => handleChangeInput(index, 'about', value) }
+                defaultValue = { project.about }
     
                 placeholder="Write about your experience or project here, be sure to format it how you want it to look on the resume"
 
@@ -174,40 +147,4 @@ const Work = function({formFields, setFormFields}){
     )
 }
 
-
-/*
-
-<TextField
-          variant='filled'
-          placeholder="Write about your job duties"
-          name='duties'
-          color="secondary"
-          fullWidth
-          multiline
-          rows='6'
-          value={formField.duties}
-          onChange={event => handleChangeInput(index, event)}
-          
-      />
-
-
-
-      <CKEditor
-          editor={ClassicEditor}
-          data={text}
-          onReady={ editor => {
-            // You can store the "editor" and use when it is needed.
-            console.log( 'Editor1 is ready to use!', editor );
-        } }
-            
-          
-          onChange={(editor) => {
-              const data = editor.getData()
-              setText(data)
-          }}
-      />
-
-      */
-
-
-export default Work
+export default Projects

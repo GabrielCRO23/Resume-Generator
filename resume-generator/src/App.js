@@ -12,8 +12,10 @@ import PersonalHeader from './components/PersonalHeader'
 import WorkHeader from './components/WorkHeader'
 import EducationHeader from './components/EducationHeader'
 import SkillsHeader from './components/SkillsHeader'
+import ProjectHeader from './components/ProjectHeader'
 import Education from './components/Education'
 import Work from './components/Work'
+import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Preview from './components/Preview'
 import parse from 'html-react-parser';
@@ -65,8 +67,12 @@ function App() {
   ])
 
   const [formFields, setFormFields] = useState([
-    { occupation: "", employer: "", startdate: "", enddate: "", duties: "" }
+    { occupation: "", employer: "", startdate: "", enddate: "", location: "", duties: "" }
 ]);
+
+  const [projects, setProjects] = useState([
+    { projectTitle: "", link: "", tech: "", about: ""}
+  ]);
 
   const [formTwoFields, setFormTwoFields] = useState([
   { school: "", certification: "", startdate: "", enddate: "" },
@@ -90,7 +96,8 @@ const [skills, setSkills] = useState("")
 if (isToggled){
   document.body.style.backgroundColor = "white"
   return <Preview formFields={formFields} setFormFields={setFormFields}
-  skills={skills} setSkills={setSkills} 
+  skills={skills} setSkills={setSkills}
+  projects={projects} setProjects={setProjects} 
   formTwoFields={formTwoFields} setFormTwoFields={setFormFields} 
   personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} 
   isToggle={isToggled} setIsToggled={setIsToggled}
@@ -118,21 +125,28 @@ if (isToggled){
 
      <SkillsHeader></SkillsHeader>
      <Skills skills={skills} setSkills={setSkills}></Skills>
-     
-     
      <hr color="#35342f"></hr>
+
+
+    <ProjectHeader></ProjectHeader>
+    <Projects projects={projects} setProjects={setProjects}></Projects>
+    <hr color="#35342f"></hr>
+
+
+
+
+
      <WorkHeader></WorkHeader>
      <Work formFields={formFields} setFormFields={setFormFields}></Work>
-     
-     
-     
-
-     
-              
-
-
-     
      <hr color="#35342f"></hr>
+
+
+
+
+
+
+
+
      <EducationHeader></EducationHeader>
      <Education formTwoFields={formTwoFields} setFormTwoFields={setFormTwoFields}></Education>
      
