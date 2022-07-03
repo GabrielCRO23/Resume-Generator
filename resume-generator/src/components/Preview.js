@@ -23,7 +23,7 @@ const Preview = function({formFields, setFormFields,
   skills, setSkills}){
 
     
-
+    const edited = false;
 
  
   let theme = createTheme({
@@ -80,22 +80,26 @@ const Preview = function({formFields, setFormFields,
             }
 
 
+
+{skills.length > 0 && 
               <React.Fragment>
-                
-                <Typography variant="h4" align="left">Skills</Typography>
+              
+
+                 <Typography variant="h4" align="left">Skills</Typography>
                 <hr></hr>
                 <Typography ml={5} sx={{ lineHeight: {md: 0.5, xs: 1}}} variant="h6">{parse(skills)}</Typography>
-                
-              </React.Fragment>
               
+              </React.Fragment>
+  }
         
-
-
+              {projects.length > 0 && 
+              <React.Fragment>
 
         <Typography variant="h4" align="left"  > Projects </Typography>
       
        <hr></hr>
-
+       </React.Fragment> 
+      }
 
 {
             projects.map((project, index) => (
@@ -117,23 +121,24 @@ const Preview = function({formFields, setFormFields,
           }
 
 
-
-
-              
+{formFields.length > 0 && 
+          <React.Fragment>
+        
         <Typography variant="h4" align="left"  > Experience </Typography>
       
               <hr></hr>
-
-              
-              
-
-
         
+         </React.Fragment>     
+  }    
+
+
+              
         {
             formFields.map((formField, index) => (
               
-
+              
             <React.Fragment key={index}>
+              
               <Box sx={{display: 'flex'}}>
               <Typography ml={5} sx={{fontWeight: 700}}variant="h5">{formField.employer}</Typography>
               <Typography sx={{marginLeft: 'auto'}} variant="h6">{formField.location}</Typography>
@@ -150,8 +155,10 @@ const Preview = function({formFields, setFormFields,
               
               
               </React.Fragment>
+              
             ))
           }
+        
 
 
 

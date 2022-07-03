@@ -29,6 +29,7 @@ const Work = function({formFields, setFormFields}){
 
     function handleAdd(){
         setFormFields([...formFields, { occupation: "", employer: "", startdate: "", enddate: "", location:"", duties: "" }])
+        console.log(formFields.length)
         
     }
 

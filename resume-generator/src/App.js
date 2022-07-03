@@ -67,11 +67,11 @@ function App() {
   ])
 
   const [formFields, setFormFields] = useState([
-    { occupation: "", employer: "", startdate: "", enddate: "", location: "", duties: "" }
+    
 ]);
 
   const [projects, setProjects] = useState([
-    { projectTitle: "", link: "", tech: "", about: ""}
+    
   ]);
 
   const [formTwoFields, setFormTwoFields] = useState([
