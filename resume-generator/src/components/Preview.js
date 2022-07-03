@@ -65,11 +65,11 @@ const Preview = function({formFields, setFormFields,
               
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'}, flexDirection: {xs: 'column', md: 'row'} }}>
               <Typography variant="subtitle2">{personal.phonenumber}</Typography>
-              <Divider color="#000000" orientation="vertical" flexItem></Divider>
+              <Divider orientation="vertical" flexItem></Divider>
               <Typography variant="subtitle2">{personal.email}</Typography>
-              <Divider color="#000000" orientation="vertical" flexItem></Divider>
+              <Divider orientation="vertical" flexItem></Divider>
               <Link href={personal.website} color="#000000" underline="none" variant="subtitle2">{personal.website}</Link>
-              <Divider color="#000000" orientation="vertical" flexItem></Divider>
+              <Divider orientation="vertical" flexItem></Divider>
               <Link href={personal.websitetwo} color="#000000" underline="none" variant="subtitle2">{personal.websitetwo}</Link>
               </Box>
               
@@ -82,7 +82,7 @@ const Preview = function({formFields, setFormFields,
                 
                 <Typography variant="h4" align="left">Skills</Typography>
                 <hr></hr>
-                <Typography ml={5} sx={{ lineHeight: {md: 0.5, xs: 1}}} variant="subtitle2">{parse(skills)}</Typography>
+                <Typography ml={5} sx={{ lineHeight: {md: 0.5, xs: 1}}} variant="h6">{parse(skills)}</Typography>
                 
               </React.Fragment>
               
@@ -101,7 +101,7 @@ const Preview = function({formFields, setFormFields,
 
             <React.Fragment key={index}>
               <Typography ml={5} variant="h5" sx={{fontWeight: 700}}>{project.projectTitle}</Typography>
-              <Typography ml={5} variant="h6" sx={{fontStyle: 'italic'}}>{project.link}</Typography>
+              <Link ml={5} href={project.link} color="#000000" underline="none" sx={{fontStyle: 'italic'}}variant="h6">{project.link}</Link>
               <Typography ml={5} variant="h6">{project.tech}</Typography>
               <Typography ml={5} variant="h6">{parse(project.about)}</Typography>
               
