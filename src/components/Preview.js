@@ -63,7 +63,7 @@ const Preview = function({formFields, setFormFields,
               <Typography variant="subtitle1">{personal.address}</Typography>
               </Box>
               
-              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'}, flexDirection: {xs: 'column', md: 'row'} }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'} }}>
               <Typography variant="subtitle2">{personal.phonenumber}</Typography>
               {personal.email.length > 0 &&
               <Divider orientation="vertical" flexItem></Divider>
@@ -98,7 +98,7 @@ const Preview = function({formFields, setFormFields,
 
                  <Typography variant="h4" align="left">Skills</Typography>
                 <hr></hr>
-                <Typography ml={5} sx={{ lineHeight: {md: 0.5, xs: 1}}} variant="h6">{parse(skills)}</Typography>
+                <Typography ml={5} sx={{ lineHeight: 0.5}} variant="h6">{parse(skills)}</Typography>
               
               </React.Fragment>
   }

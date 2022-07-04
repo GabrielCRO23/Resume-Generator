@@ -7,12 +7,13 @@ body {
 }
 
 /*
-React quill is bugged af and makes 2 toolbars for some reason so I'm hiding the first one
-*/
+React quill is bugged af and makes 2 toolbars for some reason so I'm hiding the first one. This bug only exists in development, not in build version, I DONT KNOW WHY
+
 
 .quill > .ql-toolbar:first-child {
   display: none !important;
 }
+*/
 
 .MuiDivider-root {
   background-color: #A9A9A9 !important;
