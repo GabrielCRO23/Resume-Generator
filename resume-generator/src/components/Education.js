@@ -85,6 +85,23 @@ const Education = function({formTwoFields, setFormTwoFields}){
         />
     
    </Grid>
+
+   <Grid item xs={12} sm={6}>
+           <TextField
+            variant='filled'
+            label='Location' 
+            placeholder="Location"
+            name="location"
+            color="primary"
+            fullWidth
+            value={formTwoField.location}
+            onChange={event => handleChangeInput(index, event)}
+            
+        />
+    
+   </Grid>
+
+   
    <Grid item xs={12} sm={12}>
        <Button onClick={() => handleRemove(index)} variant="outlined" color="secondary">Delete</Button>
    </Grid>

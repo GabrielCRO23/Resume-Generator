@@ -75,7 +75,7 @@ function App() {
   ]);
 
   const [formTwoFields, setFormTwoFields] = useState([
-  { school: "", certification: "", startdate: "", enddate: "" },
+  
 ]);
 
 

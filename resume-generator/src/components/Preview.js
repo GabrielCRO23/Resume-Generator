@@ -23,7 +23,7 @@ const Preview = function({formFields, setFormFields,
   skills, setSkills}){
 
     
-    const edited = false;
+    
 
  
   let theme = createTheme({
@@ -65,14 +65,25 @@ const Preview = function({formFields, setFormFields,
               
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: {md: '1rem', xs: '0.5rem'}, flexDirection: {xs: 'column', md: 'row'} }}>
               <Typography variant="subtitle2">{personal.phonenumber}</Typography>
+              {personal.email.length > 0 &&
               <Divider orientation="vertical" flexItem></Divider>
+              }
               <Typography variant="subtitle2">{personal.email}</Typography>
+              {personal.website.length > 0 &&
               <Divider orientation="vertical" flexItem></Divider>
+              }
               <Link href={personal.website} color="#000000" underline="none" variant="subtitle2">{personal.website}</Link>
+              {personal.websitetwo.length > 0 &&
               <Divider orientation="vertical" flexItem></Divider>
+              }
               <Link href={personal.websitetwo} color="#000000" underline="none" variant="subtitle2">{personal.websitetwo}</Link>
+              {personal.websitethree.length > 0 &&
               <Divider orientation="vertical" flexItem></Divider>
-              <Link href={personal.websitetwo} color="#000000" underline="none" variant="subtitle2">{personal.websitethree}</Link>
+              }
+              <Link href={personal.websitethree} color="#000000" underline="none" variant="subtitle2">{personal.websitethree}</Link>
+              
+              
+              
               </Box>
               
               </React.Fragment>
@@ -161,14 +172,34 @@ const Preview = function({formFields, setFormFields,
         
 
 
+        {formTwoFields.length > 0 && 
+          <React.Fragment>
+        
+        <Typography variant="h4" align="left"  > Education </Typography>
+      
+              <hr></hr>
+        
+         </React.Fragment>     
+  }    
+
+
+
+
 
         {
             formTwoFields.map((formTwoField, index) => (
 
             <React.Fragment key={index}>
+              <Box sx={{display: 'flex'}}>
+              <Typography ml={5} sx={{fontWeight: 700}} variant="h5">{formTwoField.school}</Typography>
+              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formTwoField.location}</Typography>
+              </Box>
+              <Box sx={{display: 'flex'}}>
+              <Typography ml={5} variant="h5">{formTwoField.certification}</Typography>
+              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formTwoField.startdate}&nbsp;-&nbsp;{formTwoField.enddate}</Typography>
+              </Box>
               
-              <Typography variant="h5">{formTwoField.school}</Typography>
-              <Typography variant="h5">{formTwoField.certification}</Typography>
+              
               
               
               </React.Fragment>
