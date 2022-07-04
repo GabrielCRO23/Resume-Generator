@@ -1,5 +1,6 @@
 {
   "name": "cv-project.",
+  "homepage": "http://{gabrielcro23}.github.io/{Resume-Generator}",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,7 +36,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "http://{gabrielcro23}.github.io/{Resume-Generator}",
   "browserslist": {
     "production": [
       ">0.2%",
