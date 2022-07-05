@@ -96,7 +96,7 @@ const Preview = function({formFields, setFormFields,
               <React.Fragment>
               
 
-                 <Typography variant="h4" align="left">Skills</Typography>
+                 <Typography sx={{ lineHeight: 0.5, fontWeight: 700}} variant="h6" align="left">Skills</Typography>
                 <hr></hr>
                 <Typography ml={5} sx={{ lineHeight: 0.5}} variant="h6">{parse(skills)}</Typography>
               
@@ -106,7 +106,7 @@ const Preview = function({formFields, setFormFields,
               {projects.length > 0 && 
               <React.Fragment>
 
-        <Typography variant="h4" align="left"  > Projects </Typography>
+        <Typography variant="h6" align="left" sx={{lineHeight: 0.5, fontWeight: 700}}  > Projects </Typography>
       
        <hr></hr>
        </React.Fragment> 
@@ -118,12 +118,12 @@ const Preview = function({formFields, setFormFields,
 
             <React.Fragment key={index}>
               <Box sx={{display: 'flex'}}>
-              <Typography ml={5} variant="h5" sx={{fontWeight: 700}}>{project.projectTitle}</Typography>
-              <Typography sx={{marginLeft: 'auto'}}ml={5} variant="h6">{project.tech}</Typography>
+              <Typography  ml={5}variant="h6" sx={{lineHeight: 0.5, fontWeight: 700}}>{project.projectTitle}</Typography>
+              <Typography sx={{lineHeight: 0.5, marginLeft: 'auto'}} variant="h6">{project.tech}</Typography>
               </Box>
               <Link ml={5} href={project.link} color="#000000" underline="none" sx={{fontStyle: 'italic'}}variant="h6">{project.link}</Link>
               
-              <Typography ml={5} variant="h6">{parse(project.about)}</Typography>
+              <Typography  ml={5}  variant="h6">{parse(project.about)}</Typography>
               
               
               
@@ -135,7 +135,7 @@ const Preview = function({formFields, setFormFields,
 {formFields.length > 0 && 
           <React.Fragment>
         
-        <Typography variant="h4" align="left"  > Experience </Typography>
+        <Typography sx={{lineHeight: 0.5, fontWeight: 700}} variant="h6" align="left"  >Work Experience </Typography>
       
               <hr></hr>
         
@@ -151,12 +151,12 @@ const Preview = function({formFields, setFormFields,
             <React.Fragment key={index}>
               
               <Box sx={{display: 'flex'}}>
-              <Typography ml={5} sx={{fontWeight: 700}}variant="h5">{formField.employer}</Typography>
-              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formField.location}</Typography>
+              <Typography ml={5} sx={{lineHeight: 0.5, fontWeight: 700}}variant="h6">{formField.employer}</Typography>
+              <Typography sx={{lineHeight: 0.5, marginLeft: 'auto'}} variant="h6">{formField.location}</Typography>
               </Box>
               <Box sx={{display: 'flex'}}>
-              <Typography ml={5} sx={{fontStyle: 'italic'}}variant="h6">{formField.occupation}</Typography>
-              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formField.startdate}&nbsp;-&nbsp;{formField.enddate}</Typography>
+              <Typography ml={5} sx={{lineHeight: 1.5, fontStyle: 'italic'}}variant="h6">{formField.occupation}</Typography>
+              <Typography sx={{lineHeight: 1.5, marginLeft: 'auto'}} variant="h6">{formField.startdate}&nbsp;-&nbsp;{formField.enddate}</Typography>
               </Box>
 
               
@@ -175,7 +175,7 @@ const Preview = function({formFields, setFormFields,
         {formTwoFields.length > 0 && 
           <React.Fragment>
         
-        <Typography variant="h4" align="left"  > Education </Typography>
+        <Typography sx={{lineHeight: 0.5, fontWeight: 700}}variant="h6" align="left"  > Education </Typography>
       
               <hr></hr>
         
@@ -191,12 +191,12 @@ const Preview = function({formFields, setFormFields,
 
             <React.Fragment key={index}>
               <Box sx={{display: 'flex'}}>
-              <Typography ml={5} sx={{fontWeight: 700}} variant="h5">{formTwoField.school}</Typography>
-              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formTwoField.location}</Typography>
+              <Typography ml={5} sx={{lineHeight: 0.5, fontWeight: 700}} variant="h6">{formTwoField.school}</Typography>
+              <Typography sx={{lineHeight: 0.5, marginLeft: 'auto'}} variant="h6">{formTwoField.location}</Typography>
               </Box>
               <Box sx={{display: 'flex'}}>
-              <Typography ml={5} variant="h5">{formTwoField.certification}</Typography>
-              <Typography sx={{marginLeft: 'auto'}} variant="h6">{formTwoField.startdate}&nbsp;-&nbsp;{formTwoField.enddate}</Typography>
+              <Typography ml={5} sx={{lineHeight: 1.5, }} variant="h6">{formTwoField.certification}</Typography>
+              <Typography sx={{lineHeight: 1.5, marginLeft: 'auto'}} variant="h6">{formTwoField.startdate}&nbsp;-&nbsp;{formTwoField.enddate}</Typography>
               </Box>
               
               

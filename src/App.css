@@ -6,6 +6,16 @@ body {
   margin-bottom: 10vh;
 }
 
+ul {
+  margin-top: 0 !important;
+  
+}
+
+p {
+  margin-top: 0 !important;
+}
+
+
 /*
 React quill is bugged af and makes 2 toolbars for some reason so I'm hiding the first one. This bug only exists in development, not in build version, I DONT KNOW WHY
 
