@@ -59,6 +59,11 @@ hr {
 }
 
 @media print{
+  @page {
+    size: A3 portrait !important;
+    margin: 0;
+  }
+  
   .noprint{
       display:none !important;
   }

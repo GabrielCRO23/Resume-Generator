@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
 import { ThemeProvider, createTheme, responsiveFontSizes} from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -8,19 +7,21 @@ import Box from '@mui/material/Box';
 import parse from 'html-react-parser';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link'
-import SkillsHeader from './SkillsHeader'
-import WorkHeader from './WorkHeader'
-import TextField from '@mui/material/TextField';
-import '@fontsource/roboto/300.css';
+
+
+import '@fontsource/roboto/400.css';
 
 
 
-const Preview = function({formFields, setFormFields, 
-  formTwoFields, setFormTwoFields, 
-  personalInfo, setPersonalInfo,
-  projects, setProjects, 
+
+const Preview = function({formFields, 
+  formTwoFields, 
+  personalInfo, 
+  projects, 
   isToggled, setIsToggled, 
-  skills, setSkills}){
+  skills, })
+  
+  {
 
     
     
@@ -211,7 +212,7 @@ const Preview = function({formFields, setFormFields,
         </div>
         <Box className="noprint" sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Button color="secondary" variant="outlined" onClick={() => setIsToggled(isToggled)}>Back to editing</Button>
-          <Button color="secondary" variant="outlined" onClick={()=> window.print()}>
+          <Button color="secondary" variant="outlined" onClick={ window.print}>
         Download resume as PDF
       </Button>
       </Box>
@@ -222,7 +223,9 @@ const Preview = function({formFields, setFormFields,
 
 
      
-
+        
+        
+       
 
 
         
@@ -232,17 +235,3 @@ const Preview = function({formFields, setFormFields,
 }
 
 export default Preview
-/*
-
-{
-    formFields.map((formField) => (
-      
-      <h1>{formField.occupation}</h1>
-      
-    ))
-  }
-
-{parse(formField.duties)}
-
-
-  */
