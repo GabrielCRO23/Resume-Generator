@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Resume-Generator/static/css/main.a2be7928.css",
+    "main.css": "/Resume-Generator/static/css/main.8e13a282.css",
     "main.js": "/Resume-Generator/static/js/main.3351a934.js",
     "static/media/roboto-all-400-normal.woff": "/Resume-Generator/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
     "static/media/roboto-latin-400-normal.woff2": "/Resume-Generator/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -11,11 +11,11 @@
     "static/media/roboto-vietnamese-400-normal.woff2": "/Resume-Generator/static/media/roboto-vietnamese-400-normal.3230f9b040f3c630e0c3.woff2",
     "static/media/roboto-greek-ext-400-normal.woff2": "/Resume-Generator/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "index.html": "/Resume-Generator/index.html",
-    "main.a2be7928.css.map": "/Resume-Generator/static/css/main.a2be7928.css.map",
+    "main.8e13a282.css.map": "/Resume-Generator/static/css/main.8e13a282.css.map",
     "main.3351a934.js.map": "/Resume-Generator/static/js/main.3351a934.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2be7928.css",
+    "static/css/main.8e13a282.css",
     "static/js/main.3351a934.js"
   ]
 }
