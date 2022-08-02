@@ -19,5 +19,5 @@ This project uses:
 
 _______________________
 
-I decided to build this project because I couldn't find good and free to use resume makers online. So I decided to build my own, which I can also edit easily in the future if I want to add or change sections, styles, fonts, etc. of the app.
+I built this project because I couldn't find good and free to use resume makers online. So I made my own, which I can also edit easily in the future if I want to add or change sections, styles, fonts, etc. of the app.
 
